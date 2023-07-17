@@ -1,11 +1,24 @@
+let ataqueJugador="";
+let ataqueE="";
+let combat="";
+
 alert("Hola, Bienvenido Jugador!!")
 
 function radom(min,max){
     return Math.floor(Math.random() * (max - min + 1)+ min)
 }
 const btnMascotaJugador= document.querySelector('#mascota-btn');
-
 btnMascotaJugador.addEventListener('click',selectMascotaJugador);
+
+const btnFuego=document.querySelector('#btn-fuego');
+btnFuego.addEventListener('click',ataqueFuego);
+
+const btnAgua=document.querySelector('#btn-agua');
+btnAgua.addEventListener('click',ataqueAgua);
+
+const btnTierra=document.querySelector('#btn-tierra');
+btnTierra.addEventListener('click',ataqueTierra);
+
 
 function selectMascotaJugador(){
     const input1= document.querySelector('#Hipodoge');
@@ -43,4 +56,56 @@ function selectMascotaEnemigo(){
         //ratigueya
         spanNMascota.innerHTML="Ratigueya"
     }
+}
+
+function ataqueFuego(){
+    ataqueJugador="Fuego";
+    ataqueE=ataqueEnemigo();
+    combate();
+}
+
+function ataqueAgua(){
+    ataqueJugador="Agua";
+    ataqueE=ataqueEnemigo();
+    combate();
+}
+
+function ataqueTierra(){
+    ataqueJugador="Tierra";
+    ataqueE=ataqueEnemigo();
+    combate();
+}
+
+function crearMesagge(){
+    let mesagge= document.createElement('p');
+    mesagge.innerHTML=`Tu mascota atacó con ${ataqueJugador}, la mascota del enemigo ataco con ${ataqueE}. RESULTADO : ${combat} `;
+    const contentMessage=document.querySelector('#mensajes');
+    contentMessage.appendChild(mesagge);
+}
+
+function ataqueEnemigo(){
+    
+    const Ataque = radom(1,3);
+    if( Ataque == 1 ){
+        return 'Fuego';
+    }else if( Ataque == 2){
+        return 'Agua';
+    }else {
+        return 'Tierra';
+    }
+}
+
+function combate(){
+    if(ataqueJugador==ataqueE){
+        combat="Empate";
+    }else if(ataqueJugador=="Fuego" && ataqueE=="Tierra"){
+        combat="ganaste"
+    }else if(ataqueJugador=="Agua" && ataqueE=="Fuego"){
+        combat="ganaste"
+    }else if(ataqueJugador=="Tierra" && ataqueE=="Agua"){
+        combat="ganaste"
+    }else{
+        combat="PERDISTE"
+    }
+    crearMesagge()
 }
