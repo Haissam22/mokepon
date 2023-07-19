@@ -4,44 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOKEPON!</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>MOKEPON </h1>
-    <section id="SeleccionarMascota">
-        <h2>Elige el ataque de tu mascota</h2>
-        <input type="text" name="" id="">
+    <section id="SeleccionarMascota" >
+        <h1 class="title">MOKEPON </h1>
+        <h2 class="subtitle">Elige el ataque de tu mascota</h2>
+        <section class="mascotas">
+            <div class=" tarjetas">
+                <input type="radio" name="Mascota" id="Hipodoge">
+                <label for="Hipodoge">
+                    <p>Hipodogue</p>
+                    <img src="./assets/hipodoge.png" alt="">
+                </label>
+                
+                <input type="radio" name="Mascota" id="Capipepo">
+                <label for="Capipepo">
+                    <p>Capipepo</p>
+                    <img src="./assets/capipepo.png" alt="">
+                </label>
+                
+                <input type="radio" name="Mascota" id="Ratigueya">
+                <label for="Ratigueya">
+                    <p>Ratigueya</p>
+                    <img src="./assets/mokepon_ratigueya.webp" alt="">
+                </label>
+                
+            </div>
+            
 
-        <label for="Hipodoge">Hipodoge</label>
-        <input type="radio" name="Mascota" id="Hipodoge">
-        <label for="Capipeo">Capipepo</label>
-        <input type="radio" name="Mascota" id="Capipepo">
-        <label for="Ratigueya">Ratigueya</label>
-        <input type="radio" name="Mascota" id="Ratigueya">
+            <button id="mascota-btn">Seleccionar</button>
 
-        <button id="mascota-btn">Seleccionar</button>
-
-    </section>
-    <section id="SeleccionarAtaque">
-        <h2>Selecciona el Ataque </h2>
-
+        </section>
         
 
-        <p>Tu mascota <span id="nMascota"></span> tiene <span>3</span> vidas</p>
-        <p>La mascota <span id="nMascotaE"></span> del enemigo tiene <span>3</span> vidas</p>
-        <p>
-            <button id="btn-fuego">Fuego </button>
-            <button id="btn-agua">Agua </button>
-            <button id="btn-tierra">Tierra </button>
-        </p>
     </section>
-    <section id="mensajes">
-        <!-- <p>Tu Mascota Ataco Con Fuego, Las mascotas del enemigo ataco con Tierra - GANASTE </p> -->
+    <section id="SeleccionarAtaque" class="SeleccionarAtaque" style="display: none;">
+        <h2 class="titleAtack">Combate</h2>
+
+        <div class="ataques">
+            <h3 class="subtitleA">Selecciona el Ataque </h3>
+            <button class="btnAtaque" id="btn-fuego">Fuego </button>
+            <button class="btnAtaque" id="btn-agua">Agua </button>
+            <button class="btnAtaque" id="btn-tierra">Tierra </button>
+        </div>
+        <div id="content">
+            <p id="resultado"></p>
+            <div id="mensajes">
+                <!-- <p>Tu Mascota Ataco Con Fuego, Las mascotas del enemigo ataco con Tierra - GANASTE </p> -->
+                <div id="ataquesJugador">
+                    <p id="Vjugador">3</p>
+                    <p id="nMascota"></p>
+
+                </div>
+                <div id="ataquesEnemigo">
+                    <p id="Venemigo">3</p> 
+                     <p id="nMascotaE"></p> 
+                     
+                </div>
+            </div>
+            
+
+            <div class="reiniciar">
+                <button id="btn-reset" style="display: none;">Reiniciar</button>
+            </div>
+
+        </div>
+        
+
+        <div>
+            
+            
+        </div>
+        
     </section>
-    <section id="RESET">
-        <button id="btn-reset">Reiniciar</button>
-    </section>
+    
+    
    
 
     <script src="./js/mokepon.js"></script>
 </body>
 </html>
+<!-- 11:27 100% -->
